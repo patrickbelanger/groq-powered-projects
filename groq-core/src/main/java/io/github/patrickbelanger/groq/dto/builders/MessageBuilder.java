@@ -27,11 +27,21 @@ public class MessageBuilder {
         this.message = new MessageDTO();
     }
 
+    /**
+     * Set role, helping the assistant to provide specific instructions
+     * @param role
+     * @return
+     */
     public MessageBuilder setRole(GroqRoles role) {
         this.message.setRole(role);
         return this;
     }
 
+    /**
+     * Set message for the assistant to respond to.
+     * @param content
+     * @return
+     */
     public MessageBuilder setContent(String content) {
         this.message.setContent(content);
         return this;

@@ -17,6 +17,7 @@
 
 package io.github.patrickbelanger.groq.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.github.patrickbelanger.groq.dto.requests.MessageDTO;
 
 import java.util.ArrayList;
@@ -25,6 +26,11 @@ import java.util.List;
 public class GroqRequestDTO {
     private List<MessageDTO> messages;
     private String model;
+    private float temperature;
+    @JsonProperty("max_tokens")
+    private int maxTokens;
+    private String stop = "None";
+    private boolean stream;
 
     public GroqRequestDTO() {
         this.messages = new ArrayList<MessageDTO>();
@@ -50,9 +56,35 @@ public class GroqRequestDTO {
         this.model = model;
     }
 
-    @Override
-    public String toString() {
-        return "GroqRequestDTO{messages=%s, model='%s'}"
-            .formatted(messages, model);
+    public float getTemperature() {
+        return temperature;
+    }
+
+    public void setTemperature(float temperature) {
+        this.temperature = temperature;
+    }
+
+    public int getMaxTokens() {
+        return maxTokens;
+    }
+
+    public void setMaxTokens(int maxTokens) {
+        this.maxTokens = maxTokens;
+    }
+
+    public String getStop() {
+        return stop;
+    }
+
+    public void setStop(String stop) {
+        this.stop = stop;
+    }
+
+    public boolean isStream() {
+        return stream;
+    }
+
+    public void setStream(boolean stream) {
+        this.stream = stream;
     }
 }

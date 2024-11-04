@@ -42,13 +42,35 @@ public class GroqRequestBuilder {
         return this;
     }
 
+    /**
+     * The language model which will generate the completion.
+     * @param model {@link GroqModels}
+     * @return
+     */
     public GroqRequestBuilder setModel(GroqModels model) {
         this.groqRequestDTO.setModel(model.getName());
         return this;
     }
 
+    /**
+     * The language model which will generate the completion.
+     * @param modelName
+     * @return
+     */
     public GroqRequestBuilder setModel(String modelName) {
         this.groqRequestDTO.setModel(modelName);
+        return this;
+    }
+
+    /**
+     * Controls randomness: lowering results in less random completions.
+     * As the temperature approaches zero, the model will become deterministic
+     * and repetitive.
+     * @param temperature
+     * @return
+     */
+    public GroqRequestBuilder setTemperature(float temperature) {
+        this.groqRequestDTO.setTemperature(temperature);
         return this;
     }
 
