@@ -1,1 +1,1 @@
-# groc-powered-projects
+# groq-powered-projects
