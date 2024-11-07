@@ -16,6 +16,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.release>21</maven.compiler.release>
+    <gdx.version>1.13.0</gdx.version>
   </properties>
 
   <dependencyManagement>
@@ -27,14 +28,43 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+      <dependency>
+        <groupId>com.badlogicgames.gdx</groupId>
+        <artifactId>gdx-platform</artifactId>
+        <version>${gdx.version}</version>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>com.badlogicgames.gdx</groupId>
+        <artifactId>gdx-freetype-platform</artifactId>
+        <version>${gdx.version}</version>
+        <type>pom</type>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
   <dependencies>
     <dependency>
-      <groupId>de.gurkenlabs</groupId>
-      <artifactId>litiengine</artifactId>
-      <version>0.8.0</version>
+      <groupId>com.badlogicgames.gdx</groupId>
+      <artifactId>gdx-backend-lwjgl3</artifactId>
+      <version>${gdx.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.badlogicgames.gdx</groupId>
+      <artifactId>gdx-freetype</artifactId>
+      <version>${gdx.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.badlogicgames.gdx</groupId>
+      <artifactId>gdx-platform</artifactId>
+      <version>${gdx.version}</version>
+      <classifier>natives-desktop</classifier>
+    </dependency>
+    <dependency>
+      <groupId>com.badlogicgames.gdx</groupId>
+      <artifactId>gdx-freetype-platform</artifactId>
+      <version>${gdx.version}</version>
+      <classifier>natives-desktop</classifier>
     </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
